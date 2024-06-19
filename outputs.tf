@@ -3,10 +3,6 @@ output "private_key_pem" {
   sensitive = true
 }
 
-# output "public_key_pem" {
-#   value = module.key_pair.public_key_pem
-# }
-
 output "vpc_id" {
   value = module.vpc.vpc_id
 }
