@@ -24,8 +24,3 @@ variable "availability_zone" {
   type        = string
   default = "eu-north-1a"
 }
-
-# variable "private_route_table_id" {
-#   description = "The ID of the private route table"
-#   type        = string
-# }
