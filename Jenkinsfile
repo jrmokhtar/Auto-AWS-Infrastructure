@@ -15,7 +15,7 @@ pipeline {
             steps {
                 git branch: 'main',
                     credentialsId: 'githubcred',
-                    url: 'https://github.com/jrmokhtar/jenkins-terraform.git'
+                    url: 'https://github.com/jrmokhtar/auto-aws-infrastructure.git'
             }
         }
         
