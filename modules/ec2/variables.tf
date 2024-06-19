@@ -1,25 +1,25 @@
 variable "ami" {
   description = "The AMI to use for the instance"
   type        = string
-  default     = "ami-0705384c0b33c194c"
+  default     = "ami"
 }
 
 variable "instance_type" {
   description = "The instance type for the instance"
   type        = string
-  default     = "t3.micro"
+  default     = "type"
 }
 
 variable "key_name" {
   description = "The key name to use for the instance"
   type        = string
-  default     = "nader"
+  default     = "name"
 }
 
 variable "name" {
   description = "The name tag for the instance"
   type        = string
-  default     = "nader-server"
+  default     = "name"
 }
 
 variable "public_subnet_id" {
