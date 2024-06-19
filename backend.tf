@@ -1,9 +1,9 @@
 terraform {
   backend "s3" {
-    bucket         = "naderr-bucket"
-    key            = "~/Desktop/terraform/terraform.tfstate"
-    region         = "eu-north-1"
-    dynamodb_table = "nader-table"
+    bucket         = "your-bucket"
+    key            = ".tfstate-path"
+    region         = "region"
+    dynamodb_table = "your-table"
     encrypt        = true
   }
 }
