@@ -3,6 +3,7 @@ provider "aws" {
 }
 
 ##############################################
+
 module "vpc" {
   source              = "./modules/vpc"
   region              = var.region
@@ -13,18 +14,21 @@ module "vpc" {
 }
 
 #############################################
+
 module "security_group" {
   source = "./modules/security_group"
   vpc_id = module.vpc.vpc_id
 }
 
 ############################################
+
 module "key_pair" {
   source   = "./modules/key_pair"
   key_name = "nader"
-}
 
+}
 ############################################
+
 module "bastion" {
   source             = "./modules/ec2"
   ami                = var.bastion_ami
@@ -36,16 +40,6 @@ module "bastion" {
   private_key_path   = module.key_pair.private_key_path
   server_sg_id = [module.security_group.server_sg_id]
   
-}
 
+}
 ############################################
-# module "ec2" {
-#   source             = "./modules/ec2"
-#   ami                = var.server_ami
-#   instance_type      = var.server_instance_type
-#   key_name           = module.key_pair.key_name
-#   subnet_id          = module.vpc.private_subnet_id
-#   server_sg_id = [module.vpc.security_group_id]
-#   name               = "EC2Server"
-#   private_key_path   = module.key_pair.private_key_path
-# }
